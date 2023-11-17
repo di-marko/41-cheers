@@ -1,0 +1,66 @@
+/* DrinkDetails.css */
+.drink-details-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.drink-image-container, .drink-info {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.drink-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.drink-header {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.drink-ingredients,
+.drink-instructions {
+    margin-top: 30px;
+    color: #333;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-item {
+    background-color: #f6f6f6;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .drink-details-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .drink-image-container, .drink-info {
+        max-width: 100%;
+        width: 100%;
+    }
+}
