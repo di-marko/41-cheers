@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({config}) => {
     return (
         <nav className="navbar">
-            <Link to="/">
-                <img src="logo.png" alt="Logo" className="navbar-logo" />
+            <Link to="/" className="navbar-link">
+                <img src={config.branding.logoUrl} alt="Logo" className="navbar-logo" />
+                <h1 className="navbar-logo-text">{config.branding.appName}</h1>
             </Link>
-            {/* Additional Navbar Content Here */}
+            {/* Additional navbar content here if needed */}
         </nav>
     );
 };

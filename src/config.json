@@ -1,0 +1,24 @@
+{
+    "branding": {
+        "appName": "Cheers",
+        "logoUrl": "logo_0.5x.png",
+        "fontFamily": "Quicksand, sans-serif"
+    },
+    "styling": {
+        "primaryTextColor": "#fff",
+        "secondaryTextColor": "#333",
+        "cardTextColor": "#fff",
+        "cardBorderRadius": "10px"
+    },
+    "layout": {
+        "gridColumns": 3,
+        "gridGap": "20px"
+    },
+    "features": {
+        "showImages": true
+    },
+    "api": {
+        "drinksEndpoint": "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic",
+        "drinkDetailsEndpoint": "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+    }
+}

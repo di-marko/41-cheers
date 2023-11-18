@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./DrinkDetails.css"
 
-const DrinkDetails = () => {
+const DrinkDetails = ({config}) => {
     const { id } = useParams();
     const [drinkDetails, setDrinkDetails] = useState(null);
 
@@ -33,13 +33,13 @@ const DrinkDetails = () => {
     }
 
     return (
-        <div className="drink-details-container">            
+        <div className="drink-details-container" style={{ fontFamily: config.branding.fontFamily }}>            
             <div className="drink-image-container">
                 <img src={drinkDetails.strDrinkThumb} alt={drinkDetails.strDrink} className="drink-image" />
             </div>
             
             <div className="drink-info">
-                <h2 className="drink-header">{drinkDetails.strDrink}</h2>
+                <h2 className="drink-header" style={{ color: config.styling.secondaryTextColor }}>{drinkDetails.strDrink}</h2>
                 <div className="drink-ingredients">
                     <h3>Ingredients</h3>
                     <ul className="ingredient-list">

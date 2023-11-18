@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Cheers - Drinks App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Cheers is a modern, responsive web application for exploring various alcoholic drink recipes. The application showcases a list of drinks, detailed recipes, and ingredient lists. Developed with a white-label approach, it allows easy customization through a **config.json** file, making it adaptable for different branding and styling needs.
 
-## Available Scripts
+## Configuration
+The **config.json** file is central to the application's flexibility. Users can alter various aspects of the UI, including:
 
-In the project directory, you can run:
+- Branding: Set the app's name, logo, and primary font.
+- Styling: Customize primary and secondary text colors, card text color, and card border radius.
+- Layout: Define grid columns and grid gap sizes for the drinks list.
+- Features: Toggle image visibility and set image sizes.
+- API: Specify endpoints for fetching drinks and drink details.
 
-### `npm start`
+Example:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+{
+  "branding": {
+    "appName": "Cheers",
+    "logoUrl": "logo_0.5x.png",
+    "fontFamily": "Quicksand, sans-serif"
+  },
+  ...
+}
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup and Running the App
 
-### `npm test`
+1. Clone the repository.
+2. Install dependencies: npm install
+3. Run the app: npm start
+4. Open http://localhost:3000 in your browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Design and Architecture
 
-### `npm run build`
+The app utilizes React for its UI components, creating a seamless single-page application experience. It employs a mobile-first design, ensuring responsiveness across various devices.
+Future Improvements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> # Trade-offs and Limitations
 
-### `npm run eject`
+Given the scale and timeline for developing the "Cheers" drinks app, several trade-offs were made to balance functionality, design simplicity, and configurability:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Configurability Scope:** The __config.json__ file allows for basic customization of branding, styling, and layout. However, due to time constraints, deeper customization options were not implemented. Such options could include:
+> 1. Complete theming of the app including primary and secondary colors
+> 2. Button styles
+> 3. Font sizes
+> 4. Enable layout changes such as grid vs list views
+> 5. Adjustable item sizes
+> 6. The ability to add or remove UI components like search bars or filters
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Styling and Design:** The app's design is intentionally kept simple and clean to focus on functionality and responsiveness. Advanced design elements and animations were limited to ensure a faster development cycle and maintain focus on the core features.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Feature Set:** The primary focus was on listing drinks and displaying detailed recipes. Additional features like user authentication, social sharing, or advanced search filters were considered but not included in this version, as well as not required.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Testing and Optimization:** While basic testing has been conducted, extensive cross-browser and cross-device testing, as well as performance optimizations (such as image optimization), were limited by the project timeline.
 
-## Learn More
+- **API Utilization:** The project heavily relies on TheCocktailDB API. More complex or custom data handling was not feasible within the project scope, restricting the app to the data and functionality provided by the API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Error Handling and Validation:** Basic error handling is implemented, but more robust handling (e.g., retry mechanisms or detailed user feedback) could be improved in future versions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> # Future Considerations
 
-### Code Splitting
+Given more time and resources, the following enhancements could be considered:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Enhanced Configurability:** Introducing a more complex configuration setup allowing for detailed customization of UI components.
+- **Advanced Design Features:** Implementing sophisticated design elements and interactivity for a richer user experience.
+- **Expanded Feature Set:** Adding features like user accounts, favoriting drinks, and social interaction.
+- **Comprehensive Testing and Optimization:** Conducting thorough testing across various devices and browsers and implementing advanced performance optimization techniques.
+- **Custom Backend Integration:** To offer more tailored content and features, integrating with a custom backend service could be explored.
