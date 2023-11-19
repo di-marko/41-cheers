@@ -5,7 +5,7 @@ import './Navbar.css';
 const Navbar = ({config}) => {
     return (
         <nav className="navbar">
-            <Link to="/" className="navbar-link">
+            <Link to="https://di-marko.github.io/41-cheers" className="navbar-link">
                 <img src={config.branding.logoUrl} alt="Logo" className="navbar-logo" />
                 <h1 className="navbar-logo-text">{config.branding.appName}</h1>
             </Link>
