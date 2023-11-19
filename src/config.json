@@ -16,9 +16,5 @@
     },
     "features": {
         "showImages": true
-    },
-    "api": {
-        "drinksEndpoint": "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic",
-        "drinkDetailsEndpoint": "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
     }
 }
