@@ -6,7 +6,7 @@ const Navbar = ({config}) => {
     return (
         <nav className="navbar">
             <Link to="/" className="navbar-link">
-                <img src={config.branding.logoUrl} alt="Logo" className="navbar-logo" />
+                <img src={config.branding.logoUrl} onError={(e) => e.target.src = 'logo.png'} alt="Logo" className="navbar-logo" />
                 <h1 className="navbar-logo-text">{config.branding.appName}</h1>
             </Link>
             {/* Additional navbar content here if needed */}

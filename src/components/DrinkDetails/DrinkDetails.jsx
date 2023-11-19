@@ -1,22 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import "./DrinkDetails.css"
+import "./DrinkDetails.css";
+
+// Get the default browser language
+const getDefaultLanguage = () => {
+    const languageSelect = {
+        'it': 'IT',
+        'es': 'ES',
+        'de': 'DE',
+        'fr': 'FR',
+        // Add other languages as needed
+    };
+
+    const browserLanguage = navigator.language.split('-')[0];
+    return languageSelect[browserLanguage] || 'EN';
+};
+
 
 const DrinkDetails = ({config}) => {
     const { id } = useParams();
     const [drinkDetails, setDrinkDetails] = useState(null);
+    const [selectedLanguage, setSelectedLanguage] = useState(getDefaultLanguage());
 
     useEffect(() => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
             .then(response => response.json())
             .then(data => {
-                setDrinkDetails(data.drinks[0]);
+                if (data.drinks) {
+                    const details = data.drinks[0];
+                    const defaultLang = getDefaultLanguage();
+                    const instructionsKey = `strInstructions${defaultLang}`;
+                    if (details[instructionsKey]) {
+                        setSelectedLanguage(defaultLang); 
+                    } else {
+                        setSelectedLanguage('EN');
+                    }
+                    setDrinkDetails(details);
+                }
             })
             .catch(error => {
                 console.error('Error fetching details:', error);
             });
     }, [id]);
 
+    // Can be implemented as a dynamic component
     if (!drinkDetails) {
         return <div>Loading...</div>;
     }
@@ -31,6 +58,9 @@ const DrinkDetails = ({config}) => {
             });
         }
     }
+
+    // Get instructions in the selected language
+    const instructions = drinkDetails[`strInstructions${selectedLanguage}`] || drinkDetails.strInstructions;
 
     return (
         <div className="drink-details-container" style={{ fontFamily: config.branding.fontFamily }}>            
@@ -50,12 +80,11 @@ const DrinkDetails = ({config}) => {
                 </div>
                 <div className="drink-instructions">
                     <h3>Instructions</h3>
-                    <p>{drinkDetails.strInstructions}</p>
+                    <p>{instructions}</p>
                 </div>
             </div>
         </div>
     );
-    
 };
 
 export default DrinkDetails;
