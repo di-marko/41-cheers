@@ -32,8 +32,6 @@ Example:
 3. Run the app: npm start
 4. Open http://localhost:3000 in your browser.
 
-> # You can view the app at https://di-marko.github.io/41-cheers
-
 ## Design and Architecture
 
 The app utilizes React for its UI components, creating a seamless single-page application experience. It employs a mobile-first design, ensuring responsiveness across various devices.
