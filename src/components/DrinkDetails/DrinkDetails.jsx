@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./DrinkDetails.css";
 
-// Get the default browser language
+// determines the default language setting of the user's 
+// browser and returns a corresponding language code
 const getDefaultLanguage = () => {
     const languageSelect = {
         'it': 'IT',
@@ -12,13 +13,15 @@ const getDefaultLanguage = () => {
         // Add other languages as needed
     };
 
-    const browserLanguage = navigator.language.split('-')[0];
+    // The navigator object contains information about the browser and the operating system.
+    // Retrieves the browser's language setting and extracts just the language code part of it
+    const browserLanguage = navigator.language.split('-')[0]; 
     return languageSelect[browserLanguage] || 'EN';
 };
 
 
 const DrinkDetails = ({config}) => {
-    const { id } = useParams();
+    const { id } = useParams(); // Retrieve the id parameter from the URL
     const [drinkDetails, setDrinkDetails] = useState(null);
     const [selectedLanguage, setSelectedLanguage] = useState(getDefaultLanguage());
 
